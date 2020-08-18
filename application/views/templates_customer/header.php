@@ -1,61 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="zxx">
 
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--=== Favicon ===-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <title>Rental Model</title>
 
-  <title>Shop Homepage - Start Bootstrap Template</title>
+    <!--=== Bootstrap CSS ===-->
+    <link href="<?php echo base_url('assets/assets_shop/')?>css/bootstrap.min.css" rel="stylesheet">
+    <!--=== Vegas Min CSS ===-->
+    <link href="<?php echo base_url('assets/assets_shop/')?>/css/plugins/vegas.min.css" rel="stylesheet">
+    <!--=== Slicknav CSS ===-->
+    <link href="<?php echo base_url('assets/assets_shop/')?>/css/plugins/slicknav.min.css" rel="stylesheet">
+    <!--=== Magnific Popup CSS ===-->
+    <link href="<?php echo base_url('assets/assets_shop/')?>/css/plugins/magnific-popup.css" rel="stylesheet">
+    <!--=== Owl Carousel CSS ===-->
+    <link href="<?php echo base_url('assets/assets_shop/')?>/css/plugins/owl.carousel.min.css" rel="stylesheet">
+    <!--=== Gijgo CSS ===-->
+    <link href="<?php echo base_url('assets/assets_shop/')?>/css/plugins/gijgo.css" rel="stylesheet">
+    <!--=== FontAwesome CSS ===-->
+    <link href="<?php echo base_url('assets/assets_shop/')?>/css/font-awesome.css" rel="stylesheet">
+    <!--=== Theme Reset CSS ===-->
+    <link href="<?php echo base_url('assets/assets_shop/')?>/css/reset.css" rel="stylesheet">
+    <!--=== Main Style CSS ===-->
+    <link href="<?php echo base_url('assets/assets_shop/css/')?>style.css" rel="stylesheet">
+    <!--=== Responsive CSS ===-->
+    <link href="<?php echo base_url('assets/assets_shop/')?>css/responsive.css" rel="stylesheet">
 
-  <!-- Bootstrap core CSS -->
-  <link href="<?php echo base_url('assets/assets_shop/') ?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="<?php echo base_url('assets/assets_shop/') ?>css/shop-homepage.css" rel="stylesheet">
-
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
-<body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Rental Mobil</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('register')?>">Register</a>
-          </li>
-          <li class="nav-item row ml-2">
-            <?php if($this->session->userdata('nama')){ ?>
-              <a class="nav-link" href="<?php echo base_url('auth/logout')?>">Welcome | <?php echo $this->session->userdata('nama')?>
-                <span class = "btn btn-sm btn-warning ">Logout</span>
-              </a>
-              <a href="<?php echo base_url('auth/ganti_password') ?>" class="nav-link">
-              <span class = "btn btn-sm btn-primary ">Ganti Password</span>
-              </a>
-              
-            <?php } else {?>
-              <a class="nav-link" href="<?php echo base_url('auth/login')?>"><span class = "btn btn-sm btn-success ">Login</span></a>
-            <?php }?>
-            <a class="nav-link" href="<?php echo base_url('register')?>"></a>
-          </li>
-        </ul>
-      </div>
+
+<body class="loader-active">
+
+    <!--== Preloader Area Start ==-->
+    <div class="preloader">
+        <div class="preloader-spinner">
+            <div class="loader-content">
+                <img src="<?php echo base_url('')?>assets/assets_shop/img/preloader.gif" alt="JSOFT">
+            </div>
+        </div>
     </div>
-  </nav>
+    <!--== Preloader Area End ==-->
+
+    <!--== Header Area Start ==-->
+    <header id="header-area" class="fixed-top">
+        <!--== Header Top Start ==-->
+        <div id="header-top" class="d-none d-xl-block">
+            <div class="container">
+                <div class="row">
+                    <!--== Single HeaderTop Start ==-->
+                    <div class="col-lg-3 text-left">
+                        <i class="fa fa-map-marker"></i> 802/2, Mirpur, Dhaka
+                    </div>
+                    <!--== Single HeaderTop End ==-->
+
+                    <!--== Single HeaderTop Start ==-->
+                    <div class="col-lg-3 text-center">
+                        <i class="fa fa-mobile"></i> +1 800 345 678
+                    </div>
+                    <!--== Single HeaderTop End ==-->
+
+                    <!--== Single HeaderTop Start ==-->
+                    <div class="col-lg-3 text-center">
+                        <i class="fa fa-clock-o"></i> Mon-Fri 09.00 - 17.00
+                    </div>
+                    <!--== Single HeaderTop End ==-->
+
+                    <!--== Social Icons Start ==-->
+                    <div class="col-lg-3 text-right">
+                        <div class="header-social-icons">
+                            <a href="#"><i class="fa fa-behance"></i></a>
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <!--== Social Icons End ==-->
+                </div>
+            </div>
+        </div>
+        <!--== Header Top End ==-->
+
+        <!--== Header Bottom Start ==-->
+        <div id="header-bottom">
+            <div class="container">
+                <div class="row">
+                    <!--== Logo Start ==-->
+                    <div class="col-lg-4">
+                        <a href="index2.html" class="logo">
+                            <img src="<?php echo base_url('')?>assets/assets_shop/img/logo.png" alt="JSOFT">
+                        </a>
+                    </div>
+                    <!--== Logo End ==-->
+
+                    <!--== Main Menu Start ==-->
+                    <div class="col-lg-8 d-none d-xl-block">
+                        <nav class="mainmenu alignright">
+                            <ul>
+                                <li><a href="<?php echo base_url('customer/dashboard')?>">Beranda</a>
+                                </li>
+                                <!-- <li><a href="about.html">About</a></li>
+                                <li><a href="services.html">services</a></li> -->
+                                <li><a href="<?php echo base_url('customer/data_mobil')?>">Mobil</a>
+                                <li><a href="<?php echo base_url('register')?>">Register</a>
+                                <?php if($this->session->userdata('nama')){?>
+                                    <li><a href="<?php echo base_url('auth/logout')?>">Welcome <?php echo $this->session->userdata('nama')?>
+                                      <span>| Logout</span>
+                                    </a>
+                                <?php } else{?>
+                                  <li><a href="<?php echo base_url('auth/login')?>">Login</a>
+                                <?php }?>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!--== Main Menu End ==-->
+                </div>
+            </div>
+        </div>
+        <!--== Header Bottom End ==-->
+    </header>
+    <!--== Header Area End ==-->
