@@ -28,16 +28,45 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="single-car-wrap">
                             <div class="car-list-thumb car-thumb-3">
-                                <img src="<?php echo base_url('assets/upload/').$mb->gambar?>" alt="">
+                                <img style = "width : 100%; height : 100%;"src="<?php echo base_url('assets/upload/').$mb->gambar?>" alt="">
                             </div>
                             <div class="car-list-info without-bar">
                                 <h2><a href="<?php ?>"><?php echo $mb->merk?></a></h2>
-                                <h5>39$ Rent /per a day</h5>
+                                <h5>Rp. <?php echo number_format($mb->harga, 0 , ',','.')?>/ Hari</h5>
                                 <p>Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean inorci luctus et ultrices posuere cubilia.</p>
                                 <ul class="car-info-list">
-                                    <li>AC</li>
-                                    <li>Diesel</li>
-                                    <li>Auto</li>
+                                    <li>
+                                        <?php if($mb->ac == "1"){
+                                            echo "<i class = 'fa fa-check-square text-warning'></i>";
+                                        }else{
+                                            echo "<i class = 'fa fa-times-circle text-danger'></i>";
+                                        }
+                                        ?> Ac
+                                    </li>
+                                    <li>
+                                        <?php if($mb->supir == "1"){
+                                            echo "<i class = 'fa fa-check-square text-warning'></i>";
+                                        }else{
+                                            echo "<i class = 'fa fa-times-circle text-danger'></i>";
+                                        }
+                                        ?> Supir
+                                    </li>
+                                    <li>
+                                        <?php if($mb->mp3_player == "1"){
+                                            echo "<i class = 'fa fa-check-square text-warning'></i>";
+                                        }else{
+                                            echo "<i class = 'fa fa-times-circle text-danger'></i>";
+                                        }
+                                        ?> mp3 Player
+                                    </li>
+                                    <li>
+                                        <?php if($mb->central_lock == "1"){
+                                            echo "<i class = 'fa fa-check-square text-warning'></i>";
+                                        }else{
+                                            echo "<i class = 'fa fa-times-circle text-danger'></i>";
+                                        }
+                                        ?> Central Lock
+                                    </li>
                                 </ul>
                                 <p class="rating">
                                     <i class="fa fa-star"></i>

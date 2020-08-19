@@ -34,12 +34,58 @@
                             <input type="text" name = "warna" class = "form-control">
                             <?php echo form_error('warna','<div class ="text-small text-danger">','</div>')?>
                         </div>
+                        <div class="form-group">
+                            <label for="">Ac</label>
+                            <select name="ac" class = "form-control" id="">
+                                <option value="">-- Pilih Status -- </option>
+                                <option value="1">Tersedia</option>
+                                <option value="0">Tidak Tersedia</option>
+                            </select>
+                            <?php echo form_error('ac','<div class ="text-small text-danger">','</div>')?>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Supir</label>
+                            <select name="supir" class = "form-control" id="">
+                                <option value="">-- Pilih Status -- </option>
+                                <option value="1">Tersedia</option>
+                                <option value="0">Tidak Tersedia</option>
+                            </select>
+                            <?php echo form_error('supir','<div class ="text-small text-danger">','</div>')?>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Mp3 Player</label>
+                            <select name="mp3_player" class = "form-control" id="">
+                                <option value="">-- Pilih Status -- </option>
+                                <option value="1">Tersedia</option>
+                                <option value="0">Tidak Tersedia</option>
+                            </select>
+                            <?php echo form_error('mp3_player','<div class ="text-small text-danger">','</div>')?>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Central Lock</label>
+                            <select name="central_lock" class = "form-control" id="">
+                                <option value="">-- Pilih Status -- </option>
+                                <option value="1">Tersedia</option>
+                                <option value="0">Tidak Tersedia</option>
+                            </select>
+                            <?php echo form_error('central_lock','<div class ="text-small text-danger">','</div>')?>
+                        </div>
                     </div>
                     <div class = "col-md-6">
                         <div class = "form-group">
                             <label for="">Tahun</label>
                             <input type="text" name = "tahun" class = "form-control">
                             <?php echo form_error('tahun','<div class ="text-small text-danger">','</div>')?>
+                        </div>
+                        <div class = "form-group">
+                            <label for="">Harga Sewa / Hari</label>
+                            <input type="number" name = "harga" class = "form-control">
+                            <?php echo form_error('harga','<div class ="text-small text-danger">','</div>')?>
+                        </div>
+                        <div class = "form-group">
+                            <label for="">Denda</label>
+                            <input type="text" name = "denda" class = "form-control">
+                            <?php echo form_error('denda','<div class ="text-small text-danger">','</div>')?>
                         </div>
                         <div class = "form-group">
                             <label for="">Status</label>

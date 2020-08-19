@@ -36,12 +36,54 @@
                             <input type="text" name = "warna" class = "form-control" value = "<?php echo $mb->warna?>">
                             <?php echo form_error('warna','<div class ="text-small text-danger">','</div>')?>
                         </div>
+                         <div class = "form-group">
+                            <label for="">AC</label>
+                            <select name="ac" class = "form-control">
+                                <option <?php if($mb->ac == "1"){echo "selected='selected'";} echo $mb->ac;?> value = "1">Tersedia</option>
+                                <option <?php if($mb->ac == "0"){echo "selected='selected'";} echo $mb->ac;?> value = "0">Tidak Tersedia</option>
+                            </select>
+                            <?php echo form_error('status','<div class ="text-small text-danger">','</div>')?>
+                        </div>
+                        <div class = "form-group">
+                            <label for="">Supir</label>
+                            <select name="supir" class = "form-control">
+                                <option <?php if($mb->supir == "1"){echo "selected='selected'";} echo $mb->supir;?> value = "1">Tersedia</option>
+                                <option <?php if($mb->supir == "0"){echo "selected='selected'";} echo $mb->supir;?> value = "0">Tidak Tersedia</option>
+                            </select>
+                            <?php echo form_error('status','<div class ="text-small text-danger">','</div>')?>
+                        </div>
+                        <div class = "form-group">
+                            <label for="">Mp3 Player</label>
+                            <select name="mp3_player" class = "form-control">
+                                <option <?php if($mb->mp3_player == "1"){echo "selected='selected'";} echo $mb->mp3_player;?> value = "1">Tersedia</option>
+                                <option <?php if($mb->mp3_player == "0"){echo "selected='selected'";} echo $mb->mp3_player;?> value = "0">Tidak Tersedia</option>
+                            </select>
+                            <?php echo form_error('status','<div class ="text-small text-danger">','</div>')?>
+                        </div>
+                        <div class = "form-group">
+                            <label for="">Central Lock</label>
+                            <select name="central_lock" class = "form-control">
+                                <option <?php if($mb->central_lock == "1"){echo "selected='selected'";} echo $mb->central_lock;?> value = "1">Tersedia</option>
+                                <option <?php if($mb->central_lock == "0"){echo "selected='selected'";} echo $mb->central_lock;?> value = "0">Tidak Tersedia</option>
+                            </select>
+                            <?php echo form_error('status','<div class ="text-small text-danger">','</div>')?>
+                        </div>
                     </div>
                     <div class = "col-md-6">
                         <div class = "form-group">
                             <label for="">Tahun</label>
                             <input type="text" name = "tahun" value = "<?php echo $mb->tahun?> "class = "form-control">
                             <?php echo form_error('tahun','<div class ="text-small text-danger">','</div>')?>
+                        </div>
+                        <div class = "form-group">
+                            <label for="">Denda</label>
+                            <input type="text" name = "denda" value = "<?php echo $mb->denda?> "class = "form-control">
+                            <?php echo form_error('denda','<div class ="text-small text-danger">','</div>')?>
+                        </div>
+                        <div class = "form-group">
+                            <label for="">Harga</label>
+                            <input type="text" name = "harga" value = "<?php echo $mb->harga?> "class = "form-control">
+                            <?php echo form_error('harga','<div class ="text-small text-danger">','</div>')?>
                         </div>
                         <div class = "form-group">
                             <label for="">Status</label>
