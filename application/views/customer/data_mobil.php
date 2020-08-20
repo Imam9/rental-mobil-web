@@ -18,6 +18,7 @@
 <!--== Car List Area Start ==-->
 <section id="car-list-area" class="section-padding">
 <div class="container">
+<?php echo $this->session->flashdata('pesan')?>
     <div class="row">
         <!-- Car List Content Start -->
         <div class="col-lg-12">
@@ -26,6 +27,7 @@
                     <!-- Single Car Start -->
                     <?php foreach($mobil as $mb):?>
                     <div class="col-lg-6 col-md-6">
+                    
                         <div class="single-car-wrap">
                             <div class="car-list-thumb car-thumb-3">
                                 <img style = "width : 100%; height : 100%;"src="<?php echo base_url('assets/upload/').$mb->gambar?>" alt="">
@@ -75,7 +77,14 @@
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star unmark"></i>
                                 </p>
-                                <a href="#" class="rent-btn">Rental</a>
+
+                                <?php if($mb->status == "1"){
+                                    echo anchor('customer/rental/tambah_rental/'.$mb->id_mobil, '<span class = "rent-btn">Rental</span>') ;
+                                }else{
+                                    echo "<span class = 'rent-btn'>Telah di Rental</span>";
+                                }
+                                
+                                ?>
                                 <a href="<?php echo base_url('customer/data_mobil/detail_mobil/').$mb->id_mobil?>" class="rent-btn">Detail</a>
                             </div>
                         </div>
