@@ -110,13 +110,14 @@
                                 <!-- <li><a href="about.html">About</a></li>
                                 <li><a href="services.html">services</a></li> -->
                                 <li><a href="<?php echo base_url('customer/data_mobil')?>">Mobil</a>
-                                <li><a href="<?php echo base_url('register')?>">Register</a>
+                                <li><a href="<?php echo base_url('customer/transaksi')?>">Transaksi</a>
                                 <?php if($this->session->userdata('nama')){?>
                                     <li><a href="<?php echo base_url('auth/logout')?>">Welcome <?php echo $this->session->userdata('nama')?>
                                       <span>| Logout</span>
                                     </a>
                                 <?php } else{?>
                                   <li><a href="<?php echo base_url('auth/login')?>">Login</a>
+                                  <li><a href="<?php echo base_url('register')?>">Register</a>
                                 <?php }?>
                             </ul>
                         </nav>

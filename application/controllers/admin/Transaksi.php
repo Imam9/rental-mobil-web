@@ -9,7 +9,6 @@ class Transaksi extends CI_Controller{
         $this->load->view('templates_admin/sidebar');
         $this->load->view('admin/data_transaksi', $data);
         $this->load->view('templates_admin/footer');
-    
     }
 }
 ?>

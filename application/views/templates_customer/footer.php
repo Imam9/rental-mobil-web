@@ -1,5 +1,5 @@
  <!-- Footer Bottom Start -->
- <div class="footer-bottom-area">
+ <div class="footer-bottom-area fixed-bottom">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
