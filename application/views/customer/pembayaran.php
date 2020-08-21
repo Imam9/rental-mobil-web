@@ -47,7 +47,7 @@
                         <tr>
                             <td></td>
                             <td></td>
-                            <td><a href="" class = "btn btn-sm btn-secondary">Print Invoice</a></td>
+                            <td><a href="<?php echo base_url('customer/transaksi/cetak_invoice/').$tr->id_rental?>" class = "btn btn-sm btn-secondary">Print Invoice</a></td>
                         </tr>
 
                         <?php endforeach ; ?>

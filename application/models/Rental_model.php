@@ -50,6 +50,12 @@ class Rental_model extends CI_model{
 
     }
 
+    public function downloadpembayaran($id){
+        $query = $this->db->get_where('transaksi', array('id_rental' => $id));
+        return $query->row_array();
+
+    }
+
 
 }
 

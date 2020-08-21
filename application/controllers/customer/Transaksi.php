@@ -40,7 +40,8 @@ class Transaksi extends CI_controller{
                 }
             }
         $data = array(
-            'bukti_pembayaran' => $bukti_pembayaran
+            'bukti_pembayaran' => $bukti_pembayaran,
+            'status_pembayaran' => '0'
         );
 
         $where = array(
@@ -54,6 +55,14 @@ class Transaksi extends CI_controller{
         </div>');
         redirect('customer/transaksi');
                      
+    }
+
+    public function cetak_invoice($id){
+        
+        $data['transaksi'] = $this->db->query("SELECT * FROM transaksi tr, mobil mb, customer cs WHERE tr.id_mobil = mb.id_mobil 
+        AND tr.id_customer = cs.id_customer AND tr.id_rental = '$id'  ORDER BY id_rental DESC")->result();
+        
+        $this->load->view('customer/cetak_invoice',$data);
     }
 }
 

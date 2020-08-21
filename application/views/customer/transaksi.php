@@ -13,6 +13,7 @@
                     <th>No Plat</th>
                     <th>Harga Sewa</th>
                     <th>Action</th>
+                    <th>Batal</th>
                 </tr>
                 <?php $no=1; foreach($transaksi as $tr):?>
                     <tr>
