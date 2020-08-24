@@ -29,9 +29,42 @@
                                 <a href="<?php echo base_url('customer/transaksi/pembayaran/'.$tr->id_rental)?>" class = "btn btn-sm btn-success">Cek Pembayaran</a>
                             <?php }?>
                         </td>
+                        <td>
+                        <?php If($tr->status_rental == "Belum Selesai"){?>
+                            <a onclick = "return confirm('Yakin Batal?')" class = "btn btn-sm btn-danger" href="<?php echo base_url('customer/transaksi/batal_transaksi/').$tr->id_rental?>">Batal</a>
+
+                        <?php }else{ ?>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal">
+                                Batal
+                            </button>
+
+                        <?php } ?>
+                           
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </table>
         </div>
     </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Informasi Batal Transaksi</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Maaf Transaksi sudah selesai
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
 </div>
