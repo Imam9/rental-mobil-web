@@ -112,7 +112,6 @@ class Data_mobil extends CI_Controller{
             $mp3_player = $this->input->post('mp3_player');
             $central_lock = $this->input->post('central_lock');
             $gambar = $_FILES['gambar']['name'];
-            $gambar = $_FILES['gambar']['name'];
             if($gambar){
                 $config['upload_path'] = './assets/upload';
                 $config['allowed_types'] = 'jpg|png|jpeg|tiff';;
