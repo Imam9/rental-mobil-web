@@ -88,7 +88,7 @@ class Transaksi extends CI_controller{
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <strong>Success!</strong> Data Berhasil di Batalkan
         </div>');
-        redirect('customer/transaka');
+        redirect('customer/transaksi');
     }
 
 }

@@ -1,10 +1,23 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Data Transaksi</h1>
+            <h1>Filter Laporan Transaksi</h1>
         </div>
-        <?php echo $this->session->flashdata('pesan')?>
-        <div class = "table-responsive">
+
+        <form method = "POST" action="<?php echo base_url('admin/laporan')?>">
+            <div class="form-group">
+                <label for="">Dari Tanggal</label>
+                <input type="date" name = "dari" class = "form-control">
+                <?php echo form_error('dari','<div class ="text-small text-danger">','</div>')?>
+            </div>
+            <div class="form-group">
+                <label for="">Sampai Tanggal</label>
+                <input type="date" name = "sampai" class = "form-control">
+                <?php echo form_error('sampai','<div class ="text-small text-danger">','</div>')?>
+            </div>
+            <button type = "submit" class = "btn btn-primary"><i class = "fas fa-eye"></i> Tampilkan Data</button>
+        </form>
+        <div class = "table-responsive mt-5">
             <table class = "table table-bordered table-striped">
                 <tr>
                     <th>No</th>
@@ -18,10 +31,9 @@
                     <th>Tanggal Dikembalikan</th>
                     <th>Status Pengembalian</th>
                     <th>Status Rental</th>
-                    <th>Cek Pembayaran</th>
-                    <th>Action</th>
+
                 </tr>
-                <?php $no = 1; foreach($transaksi as $tr):?>
+                <?php $no = 1; foreach($laporan as $tr):?>
                     <tr>
                         <td><?php echo $no++ ?></td>
                         <td><?php echo $tr->nama?></td>
@@ -58,32 +70,9 @@
                                 }
                             ?>
                         </td>
-                        <td>
-                          <center>
-                            <?php 
-                                if(empty($tr->bukti_pembayaran)){?>
-                                    <button class = "btn btn-sm btn-danger"><i class = "fas fa-times-circle"></i></button>
-                                <?php }else{?>
-                                    <a class = "btn btn-sm btn-primary "href="<?php echo base_url('admin/transaksi/pembayaran/'.$tr->id_rental)?>"><i class = "fas fa-check-circle"></i></a>
-                            <?php }?>
-                         </center>
-                        </td>
-                        <td>
-                            <?php
-                                if($tr->status == "1"){
-                                    echo "<span class = 'badge badge-warning'>selesai</span>";
-                                }else{?>
-                                    <div class="row">
-                                        <a class = "btn btn-sm btn-success" href="<?php echo base_url('admin/transaksi/transaksi_selesai/').$tr->id_rental?>"><i class = 'fas fa-check'></i></a>
-                                        <a class = "btn btn-sm btn-danger ml-2" href="<?php echo base_url('admin/transaksi/transaksi_batal/').$tr->id_rental?>"><i class = 'fas fa-times'></i></a>
-                                    </div>
-                                <?php } ?>
-                        
-                        </td>
                     </tr>
                 <?php endforeach;?>
             </table>
         </div>
-
     </section>
 </div>

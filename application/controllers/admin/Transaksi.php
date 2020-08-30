@@ -65,6 +65,7 @@ class Transaksi extends CI_Controller{
 
     public function transaksi_selesai_aksi(){
         $id = $this->input->post('id_rental');
+        $id_mobil = $this->input->post('id_mobil');
         $tanggal_pengembalian = $this->input->post('tanggal_pengembalian');
         $status_rental = $this->input->post('status_rental');
         $status_pengembalian = $this->input->post('status_pengembalian');
@@ -83,7 +84,15 @@ class Transaksi extends CI_Controller{
             'status_pengembalian' => $status_pengembalian,
             'total_denda' => $total_denda
         );
+
+        $data1 = array(
+            'status' => "1"
+        );
         
+        $where1 = array(
+            'id_mobil' => $id_mobil
+        );
+
         $where =  array(
             'id_rental' => $id
         );
@@ -96,8 +105,31 @@ class Transaksi extends CI_Controller{
         <strong>Success!</strong> Transaksi Berhasil
         </div>');
         redirect('admin/transaksi');
+    }
 
+    public function transaksi_batal($id){
+        $where = array(
+            'id_rental' => $id
+        );
 
+        $data = $this->rental_model->get_where($where, 'transaksi')->row();
+      
+
+        $where2 = array(
+            'id_mobil' => $data->id_mobil
+        );
+        
+        $data2 = array(
+            'status' => '1'
+        );
+
+        $this->rental_model->update_data('mobil', $data2, $where2);
+        $this->rental_model->delete_data($where, 'transaksi');
+        $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Success!</strong> Data Berhasil di Batalkan
+        </div>');
+        redirect('admin/transaksi');
     }
 }
 ?>

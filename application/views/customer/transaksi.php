@@ -24,7 +24,7 @@
                         <td>Rp. <?php echo number_format($tr->harga,0,',','.')?></td>
                         <td>
                             <?php if($tr->status_rental == "Selesai"){?>
-                                <button class = "btn btn-sm btn-danger">Rental Selesai</button>
+                                <button class = "btn btn-sm btn-warning">Rental Selesai</button>
                             <?php }else{?>
                                 <a href="<?php echo base_url('customer/transaksi/pembayaran/'.$tr->id_rental)?>" class = "btn btn-sm btn-success">Cek Pembayaran</a>
                             <?php }?>

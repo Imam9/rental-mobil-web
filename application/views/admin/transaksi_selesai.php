@@ -10,6 +10,7 @@
         <input type="hidden" name = "id_rental" value = "<?php echo $tr->id_rental?>">
         <input type="hidden" name = "tanggal_kembali" value = "<?php echo $tr->tanggal_kembali?>">
         <input type="hidden" name = "denda" value = "<?php echo $tr->denda?>">
+        <input type="hidden" name = "id_mobil" value = "<?php echo $tr->id_mobil?>">
         <div class="form-group">
             <label for="">Tanggal Pengembalian</label>
             <input type="date" name = "tanggal_pengembalian" class = "form-control" value = "<?php echo $tr->tanggal_pengembalian?>">
